@@ -7,7 +7,7 @@ Usage:
 ./prepare-for-country.sh NLD
 ```
 
-This will generate number matplotlib style window with the 3 graphs: 
+This will generate matplotlib style window with the 3 graphs: 
 1. Number cases per day based on the current data
 2. Number of tests per day
 3. Scaled graph of number of cases
