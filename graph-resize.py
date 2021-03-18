@@ -53,17 +53,21 @@ def main():
     xticks=[dates[0], dates[int((0 + len(dates))/2)], dates[-1]]
 
     plt.subplot(131)
-    plt.title("New Cases Per Day(as reported)")
+    plt.title("Cases Per Day(as reported)")
     plt.bar(dates, new_cases, color="blue")
     plt.xticks(xticks)
     
     plt.subplot(132)
-    plt.title("New Tests Per Day")
+    plt.title("Tests Per Day")
     plt.bar(dates, tested, color="blue")
     plt.xticks(xticks)
 
     plt.subplot(133)
-    plt.title("New Cases Adjusted To The Number Of Tests On The Last Day", color="red")
+
+    title_new_cases = "Cases Adjusted For The Number Of " + (
+            "Tests On The Last Day"  if sys.argv[3] != "max" else "Maximum Tests Done"
+    )
+    plt.title(title_new_cases, color="red")
     plt.bar(dates, new_cases_adjusted, color="red")
 
     plt.suptitle("Covid Cases Per Day " + country_code + " Adjusted", color="red")
